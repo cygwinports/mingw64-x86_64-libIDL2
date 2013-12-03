@@ -1,0 +1,20 @@
+CROSS_HOST="x86_64-w64-mingw32"
+ORIG_PN="libIDL"
+inherit cross gnome2
+
+NAME="mingw64-x86_64-libIDL2"
+VERSION=0.8.14
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Interface Definition Language library for Win64 toolchain"
+DESCRIPTION="This package does NOT contain cygwin binaries.  Instead, it
+contains msvcrt-linked binaries (aka 'mingw').  It is for use with the
+mingw64-x86_64-gcc cross compiler, and installs into the
+/usr/x86_64-w64-mingw32/sys-root/mingw/{lib,include} directories."
+
+PATCH_URI="01-vpath.patch"
+
+CYGCONF_ARGS="libIDL_cv_long_long_format=I64"
+MAKEOPTS+=" infodir= "
+
+DIFF_EXCLUDES="Makefile.msc"

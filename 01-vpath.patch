@@ -1,0 +1,11 @@
+--- origsrc/libIDL-0.8.14/Makefile.am	2010-03-30 05:30:27.000000000 -0500
++++ src/libIDL-0.8.14/Makefile.am	2012-09-14 07:20:45.158673400 -0500
+@@ -4,7 +4,7 @@
+ #
+ if OS_WIN32
+ libIDL_def = libIDL.def
+-export_symbols = -export-symbols libIDL.def
++export_symbols = -export-symbols $(srcdir)/libIDL.def
+ endif
+ 
+ SUBDIRS = include
